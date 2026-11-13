@@ -1,0 +1,585 @@
+<title>東京 Winter 2026–27</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: a hand-scroll (makimono) — each day is a panel with a vertical date rail, the plan in ink, suggestions in pine, budget on the right. Indigo for structure, vermilion only for seals and warnings. */
+:root {
+  --paper: #ECEDE7;      /* 白鼠 washi ground */
+  --sheet: #F7F7F3;      /* card paper */
+  --ink: #1C1F24;        /* 墨 */
+  --ink-2: #4E535B;
+  --ink-3: #7A7F86;
+  --line: #CDCFC6;
+  --ai: #23426B;         /* 藍 indigo */
+  --ai-soft: #DCE3EC;
+  --shu: #C23B22;        /* 朱 vermilion */
+  --shu-soft: #F3DDD6;
+  --matsu: #47664A;      /* 松葉 pine */
+  --matsu-soft: #DCE6D8;
+  --wave: #23426B;
+  --f-display: "Shippori Mincho B1", "Noto Serif TC", "Songti TC", "Hiragino Mincho ProN", serif;
+  --f-body: "Zen Kaku Gothic New", "PingFang TC", "Hiragino Sans", "Noto Sans TC", system-ui, sans-serif;
+  --r: 3px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121417; --sheet: #1A1D21; --ink: #E7E6DF; --ink-2: #B0B3B8; --ink-3: #868A90;
+    --line: #2F3439; --ai: #93ADD8; --ai-soft: #1F2A3A; --shu: #E5674E; --shu-soft: #3A211C;
+    --matsu: #93B786; --matsu-soft: #1E2B1E; --wave: #93ADD8; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121417; --sheet: #1A1D21; --ink: #E7E6DF; --ink-2: #B0B3B8; --ink-3: #868A90;
+  --line: #2F3439; --ai: #93ADD8; --ai-soft: #1F2A3A; --shu: #E5674E; --shu-soft: #3A211C;
+  --matsu: #93B786; --matsu-soft: #1E2B1E; --wave: #93ADD8; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.65; }
+a { color: var(--ai); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--shu); outline-offset: 2px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 56px; background: var(--wave); opacity: .14;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20' viewBox='0 0 40 20'%3E%3Cg fill='none' stroke='black' stroke-width='1.2'%3E%3Ccircle cx='20' cy='20' r='18'/%3E%3Ccircle cx='20' cy='20' r='13'/%3E%3Ccircle cx='20' cy='20' r='8'/%3E%3Ccircle cx='0' cy='10' r='18'/%3E%3Ccircle cx='0' cy='10' r='13'/%3E%3Ccircle cx='40' cy='10' r='18'/%3E%3Ccircle cx='40' cy='10' r='13'/%3E%3C/g%3E%3C/svg%3E") repeat-x bottom / 40px 20px;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20' viewBox='0 0 40 20'%3E%3Cg fill='none' stroke='black' stroke-width='1.2'%3E%3Ccircle cx='20' cy='20' r='18'/%3E%3Ccircle cx='20' cy='20' r='13'/%3E%3Ccircle cx='20' cy='20' r='8'/%3E%3Ccircle cx='0' cy='10' r='18'/%3E%3Ccircle cx='0' cy='10' r='13'/%3E%3Ccircle cx='40' cy='10' r='18'/%3E%3Ccircle cx='40' cy='10' r='13'/%3E%3C/g%3E%3C/svg%3E") repeat bottom / 40px 20px; }
+.hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; padding-block: 48px 84px; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(40px, 7vw, 76px); line-height: 1.05; margin: 10px 0 14px; letter-spacing: .02em; text-wrap: balance; }
+h1 .thin { font-weight: 500; color: var(--ink-2); }
+.lede { max-width: 60ch; color: var(--ink-2); margin: 0; }
+.seal { width: 92px; height: 92px; border: 3px solid var(--shu); color: var(--shu); border-radius: 6px; display: grid; place-items: center; transform: rotate(-4deg);
+  font-family: var(--f-display); font-weight: 800; font-size: 50px; line-height: 1; margin-top: 8px; position: relative; }
+.seal::after { content: ""; position: absolute; inset: 4px; border: 1px solid var(--shu); border-radius: 3px; opacity: .6; }
+.stats { display: flex; flex-wrap: wrap; gap: 12px 36px; margin-top: 28px; }
+.stat b { display: block; font-family: var(--f-display); font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--ink-3); letter-spacing: .06em; }
+
+/* Toolbar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+.bar-inner { display: flex; align-items: center; gap: 12px; padding-block: 10px; }
+.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; padding-block: 2px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; display: grid; justify-items: center; min-width: 44px; padding: 4px 8px; border: 1px solid var(--line); border-radius: var(--r); text-decoration: none; color: var(--ink); background: var(--sheet); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.chip small { font-size: 10px; color: var(--ink-3); }
+.chip b { font-family: var(--f-display); font-size: 16px; }
+.chip.open { border-style: dashed; border-color: var(--matsu); }
+.chip.open b { color: var(--matsu); }
+.chip:hover { border-color: var(--ai); }
+.filters { display: flex; gap: 4px; flex: none; }
+.fbtn { font: inherit; font-size: 12px; padding: 6px 10px; border: 1px solid var(--line); background: transparent; color: var(--ink-2); border-radius: var(--r); cursor: pointer; }
+.fbtn[aria-pressed="true"] { background: var(--ai); border-color: var(--ai); color: var(--sheet); }
+@media (max-width: 720px) { .bar-inner { flex-direction: column; align-items: stretch; } .filters { overflow-x: auto; } }
+
+/* Sections */
+section.block { padding-block: 44px 8px; }
+h2 { font-family: var(--f-display); font-weight: 700; font-size: 28px; margin: 0 0 6px; display: flex; align-items: baseline; gap: 12px; text-wrap: balance; }
+h2 .jp { font-size: 15px; font-weight: 500; color: var(--ink-3); letter-spacing: .1em; }
+.sub { color: var(--ink-2); margin: 0 0 22px; max-width: 70ch; }
+
+/* Review */
+.review { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.note { background: var(--sheet); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; min-width: 0; }
+.note .mark { grid-row: span 2; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 14px; }
+.note.fix .mark { background: var(--shu-soft); color: var(--shu); }
+.note.book .mark { background: var(--ai-soft); color: var(--ai); }
+.note.check .mark { background: var(--matsu-soft); color: var(--matsu); }
+.note h3 { margin: 0; font-size: 14px; font-weight: 700; }
+.note p { margin: 0; font-size: 13.5px; color: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--ink-3); margin: -8px 0 16px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+/* Rates */
+.rates { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; background: var(--sheet); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 16px; font-size: 13px; color: var(--ink-2); margin-bottom: 22px; }
+.rates label { display: inline-flex; align-items: center; gap: 6px; }
+.rates input { width: 76px; font: inherit; font-variant-numeric: tabular-nums; padding: 4px 6px; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); color: var(--ink); }
+.rates button { font: inherit; font-size: 12px; padding: 4px 10px; border: 1px solid var(--line); border-radius: var(--r); background: transparent; color: var(--ink-2); cursor: pointer; }
+
+/* Phase header */
+.phase { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin: 40px 0 14px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); }
+.phase h3 { font-family: var(--f-display); font-size: 22px; margin: 0; font-weight: 700; }
+.phase span { color: var(--ink-3); font-size: 13px; }
+
+/* Day */
+.day { display: grid; grid-template-columns: 96px minmax(0, 1fr); background: var(--sheet); border: 1px solid var(--line); border-radius: var(--r); margin-bottom: 14px; scroll-margin-top: 90px; }
+.rail { border-right: 1px solid var(--line); padding: 18px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.rail .num { font-family: var(--f-display); font-weight: 800; font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums; }
+.rail .vert { writing-mode: vertical-rl; font-family: var(--f-display); font-size: 15px; letter-spacing: .18em; color: var(--ink-2); }
+.rail .dow { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-display); font-weight: 700; border: 1px solid var(--ink-3); font-size: 14px; }
+.rail .dow.we { border-color: var(--shu); color: var(--shu); }
+.body { display: grid; grid-template-columns: minmax(0, 1fr) 248px; }
+.main { padding: 18px 22px 20px; min-width: 0; }
+.dhead { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 4px; }
+.dhead h4 { font-family: var(--f-display); font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3; }
+.dhead .en { color: var(--ink-3); font-size: 13px; }
+.pill { font-size: 11px; letter-spacing: .06em; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.planned { color: var(--ai); }
+.pill.partial { color: var(--ink-2); }
+.pill.open { color: var(--matsu); border-style: dashed; }
+.crew { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
+.flag { background: var(--shu-soft); color: var(--ink); border-left: 3px solid var(--shu); padding: 8px 12px; font-size: 13px; margin: 0 0 12px; border-radius: 0 var(--r) var(--r) 0; }
+.flag b { color: var(--shu); }
+
+.tl { list-style: none; margin: 0; padding: 0; position: relative; }
+.tl::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+.it { position: relative; padding: 0 0 14px 26px; display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 2px 12px; }
+.it:last-child { padding-bottom: 0; }
+.it::before { content: ""; position: absolute; left: 1px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ink); border: 2px solid var(--sheet); box-shadow: 0 0 0 1px var(--ink); }
+.it.idea::before { background: var(--sheet); box-shadow: 0 0 0 1px var(--matsu); }
+.it .time { font-size: 12.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.it .ttl { font-weight: 700; }
+.it.idea .ttl { color: var(--matsu); }
+.it .tag { font-size: 10.5px; letter-spacing: .08em; color: var(--matsu); border: 1px dashed var(--matsu); border-radius: 2px; padding: 0 5px; margin-left: 6px; font-weight: 500; vertical-align: 2px; white-space: nowrap; }
+.it .tag.moved { color: var(--shu); border-color: var(--shu); border-style: solid; }
+.it .nt { font-size: 13.5px; color: var(--ink-2); margin: 2px 0 0; }
+.it .links { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; margin-top: 4px; }
+.it .links a { overflow-wrap: anywhere; }
+.it .time:empty { display: none; }
+.it .time:empty + .content { grid-column: 1 / -1; }
+.content { min-width: 0; grid-column: 2; }
+
+.budget { border-left: 1px solid var(--line); padding: 18px 18px 20px; background: color-mix(in srgb, var(--paper) 40%, var(--sheet)); border-radius: 0 var(--r) var(--r) 0; }
+.budget .lab { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.budget .yen { font-family: var(--f-display); font-weight: 800; font-size: 30px; line-height: 1.2; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.budget .fx { display: flex; gap: 14px; font-variant-numeric: tabular-nums; color: var(--ink-2); font-size: 14px; font-weight: 500; }
+.budget dl { margin: 14px 0 0; display: grid; grid-template-columns: 1fr auto; gap: 3px 10px; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.budget dt { color: var(--ink-3); }
+.budget dd { margin: 0; text-align: right; }
+.budget .bn { font-size: 12px; color: var(--ink-3); margin: 10px 0 0; line-height: 1.5; }
+.bar-track { height: 4px; background: var(--line); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--ai); }
+
+@media (max-width: 860px) {
+  .body { grid-template-columns: 1fr; }
+  .budget { border-left: 0; border-top: 1px solid var(--line); border-radius: 0 0 var(--r) 0; }
+}
+@media (max-width: 560px) {
+  .day { grid-template-columns: 1fr; }
+  .rail { flex-direction: row; justify-content: flex-start; padding: 12px 16px; border-right: 0; border-bottom: 1px solid var(--line); gap: 12px; }
+  .rail .num { font-size: 34px; }
+  .rail .vert { writing-mode: horizontal-tb; letter-spacing: .08em; }
+  .main { padding: 14px 16px 16px; }
+  .it { grid-template-columns: 1fr; }
+  .content { grid-column: 1; }
+  .hero-inner { grid-template-columns: 1fr; padding-block: 32px 72px; }
+  .seal { position: absolute; right: 16px; top: 28px; width: 64px; height: 64px; font-size: 34px; }
+}
+
+/* Totals table */
+.tbl-wrap { overflow-x: auto; background: var(--sheet); border: 1px solid var(--line); border-radius: var(--r); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 13.5px; min-width: 560px; }
+th, td { padding: 8px 14px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+thead th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+tfoot td { font-weight: 700; border-bottom: 0; border-top: 2px solid var(--ink); }
+td .mini { display: inline-block; height: 6px; background: var(--ai); border-radius: 1px; vertical-align: middle; margin-right: 8px; opacity: .7; }
+
+/* Lists */
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.panel { background: var(--sheet); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; min-width: 0; }
+.panel h3 { font-family: var(--f-display); font-size: 18px; margin: 0 0 10px; }
+.wish { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.wish li { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 10px; font-size: 13.5px; }
+.wish .when { color: var(--ink-3); font-size: 12px; font-variant-numeric: tabular-nums; padding-top: 1px; }
+.wish .pri { color: var(--shu); font-size: 11px; font-weight: 700; margin-left: 6px; }
+.reels { list-style: none; margin: 0; padding: 0; columns: 2 220px; column-gap: 20px; }
+.reels li { break-inside: avoid; padding: 4px 0; font-size: 13.5px; }
+.reels label { display: flex; gap: 8px; align-items: baseline; cursor: pointer; }
+.reels input { accent-color: var(--shu); }
+.reels .done a { color: var(--ink-3); text-decoration: line-through; }
+.count { font-size: 12px; color: var(--ink-3); font-weight: 400; margin-left: 8px; font-family: var(--f-body); }
+
+footer { padding-block: 40px 56px; color: var(--ink-3); font-size: 12.5px; }
+footer p { margin: 0 0 6px; max-width: 80ch; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div id="root"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script>
+const { useState, useEffect, useMemo } = React;
+const html = htm.bind(React.createElement);
+
+const gm = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+const L = (label, url) => ({ label, url });
+
+/* ---------- Phases ---------- */
+const PHASES = {
+  p1: { title: "東京 · 三人行", en: "Tokyo with 石凱婷 & 翟青兒", range: "26 – 31 Dec", crew: "石凱婷 · 翟青兒 · you (Airbnb until 31 Dec 12:00)" },
+  p2: { title: "新年 · 兩人", en: "New Year with 翟青兒", range: "1 – 4 Jan", crew: "翟青兒 · you" },
+  p3: { title: "一人旅", en: "Solo days", range: "5 – 9 Jan", crew: "Solo" },
+};
+
+/* ---------- Days ---------- */
+// src: "plan" = from your doc, "idea" = suggestion for a blank slot
+// budget (JPY, per person): transport, food, cafe, tickets, other
+const DAYS = [
+  { id: "d1226", phase: "p1", d: 26, m: "十二月", dow: "土", we: true, en: "Sat 26 Dec 2026", title: "到着 · Arrival", area: "Narita → Airbnb", status: "partial",
+    items: [
+      { t: "16:00–17:00", src: "plan", ttl: "Land at Narita", nt: "Top up Suica / PASMO (or add it to Apple Wallet) before leaving the airport. You'll use it every day." },
+      { t: "17:00–19:00", src: "plan", ttl: "Keisei Skyliner → Airbnb", links: [L("Airbnb on map", "https://maps.app.goo.gl/hJVcCkZrNcnjimhU8")], nt: "Reservation details PDF is in your Drive folder." },
+      { t: "19:30–22:00", src: "idea", ttl: "Easy first night", nt: "Dinner close to the Airbnb (ramen or a neighbourhood izakaya), then a konbini run for tomorrow's breakfast. Keep it short. Tomorrow starts late anyway." },
+    ],
+    budget: { transport: 2800, food: 3500, cafe: 0, tickets: 0, other: 0 }, bn: "Skyliner ≈ ¥2,580 one way." },
+
+  { id: "d1227", phase: "p1", d: 27, m: "十二月", dow: "日", we: true, en: "Sun 27 Dec", title: "原宿", area: "Harajuku · Omotesando", status: "partial",
+    items: [
+      { t: "11:00–12:30", src: "idea", ttl: "Meiji Jingu (明治神宮) forest walk", nt: "Free, five minutes from Harajuku Station. This week is the calm window before the New Year crowds arrive.", links: [L("Map", gm("Meiji Jingu"))] },
+      { t: "13:00–14:30", src: "plan", ttl: "Lunch: your Harajuku pick #1", links: [L("Tabelog 13095244", "https://tabelog.com/en/tokyo/A1306/A130601/13095244/")] },
+      { t: "15:00–19:00", src: "plan", ttl: "原宿行街 · Shopping", nt: "Harry Potter Shop Harajuku → Vivienne Westwood Red Label (Laforet) → Takeshita-dori → Cat Street.", links: [L("Harry Potter Shop", gm("Harry Potter Shop Harajuku")), L("Vivienne Westwood @ Laforet", "https://www.viviennewestwood.com/storedetails/?storeID=Tokyo-Red-Label-Concept-Store-Laforet")] },
+      { t: "19:00", src: "plan", ttl: "Dinner: your Harajuku pick #2", links: [L("Tabelog 13195738 (menu)", "https://tabelog.com/tw/tokyo/A1306/A130601/13195738/dtlmenu/")] },
+    ],
+    budget: { transport: 600, food: 5000, cafe: 1500, tickets: 0, other: 0 }, bn: "Shopping not included." },
+
+  { id: "d1228", phase: "p1", d: 28, m: "十二月", dow: "月", en: "Mon 28 Dec", title: "銀座", area: "Ginza → Azabudai Hills", status: "planned",
+    flag: "Your doc had TOMORROWLAND at 14:00–15:00 and Tricolore afternoon tea at 14:00. I moved the shopping earlier and the tea to 15:00.",
+    items: [
+      { t: "12:00–13:00", src: "plan", ttl: "Lunch: 仙台たんや利久 (Gransta Yaesu) or 炭焼うな富士 (Yurakucho)", nt: "Unafuji queues. Arrive by 11:30 if you choose it. Rikyu is inside Tokyo Station, so it's the easier option.", links: [L("Tanya Rikyu", "https://tabelog.com/en/tokyo/A1302/A130201/13119727/dtlmenu/"), L("Unafuji Yurakucho", "https://tabelog.com/en/tokyo/A1301/A130103/13250032/dtlmenu/")] },
+      { t: "13:15–15:00", src: "plan", tag: "re-timed", ttl: "Coat & bag run", nt: "Start with PUBLIC TOKYO (coat priority), then TOMORROWLAND at Ginza Mitsukoshi (Caban coat), COACH Ginza (Chelsea bag) and UNIQLO Ginza.", links: [L("PUBLIC TOKYO coat", "https://public-tokyo.com/shop/g/g166651002766"), L("Tomorrowland coat", "https://store.tomorrowland.co.jp/item/caban/59099409001.html?color_id=49"), L("COACH Chelsea", "https://ca.coach.com/en/products/chelsea-shoulder-bag-/CDS58.html?frp=CDS58+B4MPL"), L("UNIQLO item", "https://www.uniqlo.com/jp/ja/products/E486461-000/00?colorDisplayCode=09&sizeDisplayCode=999"), L("Map pin", "https://maps.app.goo.gl/Ud4K3VpefH7zK9fg7?g_st=ic")] },
+      { t: "15:00–16:30", src: "plan", tag: "re-timed", ttl: "Afternoon tea · Tricolore (walk-in)", links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13007761/")] },
+      { t: "17:00–17:35", src: "plan", ttl: "Ginza Sand (walk-in)", links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13231045/")] },
+      { t: "18:00–20:00", src: "plan", ttl: "Hills House Sky Room Café & Bar · 打卡 (walk-in)", nt: "In Azabudai Hills. Take the Hibiya Line from Ginza to Kamiyacho (about 10 min). It's dark by 16:40, so you'll get the night view.", links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1307/A130701/13291562/")] },
+    ],
+    budget: { transport: 800, food: 7000, cafe: 4000, tickets: 0, other: 0 }, bn: "Coat, bag and UNIQLO are in the wishlist below, not in this figure." },
+
+  { id: "d1229", phase: "p1", d: 29, m: "十二月", dow: "火", en: "Tue 29 Dec", title: "渋谷", area: "Shibuya", status: "planned",
+    items: [
+      { t: "11:30", src: "plan", ttl: "Udon at つるとんたん Shibuya", links: [L("Tsurutontan Shibuya", "https://www.tsurutontan.co.jp/shop/shibuya/")] },
+      { t: "13:00", src: "plan", ttl: "Photo spot · 渋谷1丁目12-14", links: [L("Instagram reference", "https://www.instagram.com/p/DfL-oU3lPk_/"), L("Map", gm("渋谷1丁目12-14"))] },
+      { t: "13:30–16:30", src: "plan", ttl: "Loft · Shibuya Hands · Disney Store · Dior", nt: "Dior card wallet is on the list. Shops run normal hours on 29 Dec.", links: [L("Dior card wallet", "https://www.dior.com/en_ca/fashion/products/2ESCH135YSE_H03E")] },
+      { t: "17:00–18:00", src: "plan", ttl: "The “must go 5–6 pm” spot", nt: "Your doc says “must go between 5–6pm” right after this link. Check that it's the place you meant.", links: [L("Tabelog 13240659", "https://tabelog.com/tokyo/A1303/A130301/13240659/")] },
+      { t: "19:00", src: "plan", ttl: "Dinner from your shortlist", nt: "The last link is in Ebisu, one stop away on the JR Yamanote Line.", links: [L("13302941", "https://tabelog.com/en/tokyo/A1303/A130301/13302941/"), L("13241227", "https://tabelog.com/tokyo/A1303/A130301/13241227/dtlmenu/"), L("13307817", "https://tabelog.com/tokyo/A1303/A130301/13307817/dtlmenu/"), L("Ebisu 13024799", "https://tabelog.com/en/tokyo/A1304/A130401/13024799/")] },
+    ],
+    budget: { transport: 600, food: 5500, cafe: 1500, tickets: 0, other: 0 }, bn: "Dior and Loft shopping not included." },
+
+  { id: "d1230", phase: "p1", d: 30, m: "十二月", dow: "水", en: "Wed 30 Dec", title: "浅草 · 晴空塔", area: "Asakusa · Skytree", status: "planned",
+    items: [
+      { t: "09:00–11:00", src: "plan", ttl: "浅草寺 Sensō-ji", nt: "Draw an omikuji, buy omamori, see the koi. If you draw 凶, tie it to the rack beside the stall. Don't take it home." },
+      { t: "11:00–12:00", src: "plan", ttl: "浅草名代らーめん与ろゐ屋 Yoroiya", nt: "On the way to Nakamise. Order the yuzu-broth ramen with double egg and thick chashu." },
+      { t: "12:00–13:00", src: "plan", ttl: "Asakusa Culture Tourist Information Center rooftop", nt: "Free. Go straight to the top floor for Sensō-ji, Kaminarimon and Skytree in one frame.", links: [L("Map", gm("Asakusa Culture Tourist Information Center"))] },
+      { t: "13:00–15:00", src: "plan", ttl: "Orange-dori city walk (橘子街)", nt: "Orange postbox and Sanrio shop. Snack list: 木村屋人形焼 · 与兵衛 dango · 寿清庵 · 東京カレーパン · Imo Pippi purple-yam Mont Blanc · 浅草そらつき · Asakusa Unana." },
+      { t: "15:00–19:00", src: "plan", ttl: "Skytree Tembo Galleria (450 m) + Sumida Aquarium", nt: "Book a 15:30 entry online so you see daylight, sunset (about 16:30) and night from the top. The aquarium (penguins, jellyfish, seals) is in the same complex.", links: [L("Map", gm("Tokyo Skytree"))] },
+      { t: "19:00–20:30", src: "plan", ttl: "京都勝牛 Asakusa · wagyu gyūkatsu", nt: "Get the kuroge wagyu. The beef tongue was chewy, so skip it." },
+    ],
+    budget: { transport: 600, food: 5000, cafe: 2500, tickets: 6500, other: 0 }, bn: "Tickets: Skytree combo ≈ ¥3,500–4,000, aquarium ≈ ¥2,500, plus omamori." },
+
+  { id: "d1231", phase: "p1", d: 31, m: "十二月", dow: "木", en: "Thu 31 Dec · 大晦日", title: "大晦日 · NYE", area: "Check-out · Nippori · new stay", status: "partial",
+    flag: "Your doc has no accommodation after Airbnb check-out (31 Dec 12:00). The Kamakura notes mention staying in Shinjuku. Book 31 Dec – 9 Jan soon.",
+    items: [
+      { t: "Morning", src: "plan", ttl: "Pack · 洋服の青山 (link from your doc)", links: [L("Shop page", "https://www.y-aoyama.jp/en/ec/shop/r/r684/?lc=topBnr_category_m")] },
+      { t: "12:00–13:00", src: "plan", ttl: "Airbnb check-out → Nippori → Skyliner", nt: "石凱婷's flight is at 16:55. Skyliner + airport transit means leaving Nippori by about 13:00." },
+      { t: "14:00–17:00", src: "idea", ttl: "Move to the next stay and check in" },
+      { t: "Evening", src: "idea", ttl: "年越しそば + 除夜の鐘", nt: "Have toshikoshi soba for New Year's Eve, then hear the temple bells at Zōjō-ji, next to Tokyo Tower. Many restaurants close early tonight, so eat by 20:00.", links: [L("Zōjō-ji", gm("Zojoji Temple"))] },
+    ],
+    budget: { transport: 1000, food: 4500, cafe: 1000, tickets: 0, other: 0 }, bn: "石凱婷 adds ≈ ¥2,600 for the Skyliner." },
+
+  { id: "d0101", phase: "p2", d: 1, m: "一月", dow: "金", en: "Fri 1 Jan 2027 · 元日", title: "元日 · New Year", area: "Hair · Hatsumōde", status: "partial",
+    flag: "Many salons close 1–3 Jan. Check the stylist's calendar on Hot Pepper Beauty now. If 1 Jan isn't available, 4 Jan or 7 Jan both have space.",
+    items: [
+      { t: "Morning", src: "idea", ttl: "初詣 Hatsumōde", nt: "Meiji Jingu is the most famous but packed. Go before 9:00. Calmer alternatives are Hie Shrine (Akasaka) or Kanda Myōjin.", links: [L("Hie Shrine", gm("Hie Shrine Akasaka")), L("Kanda Myojin", gm("Kanda Myojin"))] },
+      { t: "Afternoon", src: "plan", ttl: "染頭髮 · Hair colour", links: [L("Stylist on Hot Pepper", "https://beauty.hotpepper.jp/slnH000362983/stylist/")] },
+      { t: "Evening", src: "idea", ttl: "Shibuya 109 lucky bags", nt: "Most department stores close on 1 Jan and open on 2 Jan for 福袋 sales. Shibuya 109 and some station buildings usually open on New Year's Day. Check the hours that week.", links: [L("Shibuya 109", gm("Shibuya 109"))] },
+    ],
+    budget: { transport: 600, food: 4000, cafe: 1000, tickets: 1000, other: 15000 }, bn: "Other = hair colour, estimated ≈ ¥12,000–18,000." },
+
+  { id: "d0102", phase: "p2", d: 2, m: "一月", dow: "土", we: true, en: "Sat 2 Jan", title: "鎌倉 · 江之島", area: "Kamakura → Enoshima (Enoden line)", status: "planned",
+    flag: "Tsurugaoka Hachimangū is one of Japan's busiest shrines on 1–3 Jan. Swapping Kamakura with 4 Jan (a Monday) would give you a much quieter day.",
+    items: [
+      { t: "08:30", src: "plan", ttl: "Shinjuku → Kamakura · JR Shōnan-Shinjuku Line", nt: "Tap in through the JR gates first, then follow the JS signs to platform 1/2 for the Zushi-bound train. 11 stops, about 1 hour." },
+      { t: "09:45", src: "plan", ttl: "Komachi-dori → 鶴岡八幡宮", nt: "East exit. Free entry. Walk back to Kamakura Station afterwards." },
+      { t: "11:30", src: "plan", ttl: "Enoden → Hase (3 stops): 長谷寺 + 鎌倉大仏", nt: "The Enoden 1-day pass (のりおりくん) is ¥800 and lets you hop off as often as you like. Otherwise just use Suica. Hase-dera is about ¥400, with a lookout at the top. The Great Buddha is a 6-minute walk, about ¥300." },
+      { t: "13:30", src: "plan", ttl: "七里ヶ浜 Shichirigahama", nt: "Fuji-over-the-sea views on clear days. Walk 900 m along the coast and stop at a café on the way." },
+      { t: "14:30", src: "plan", ttl: "鎌倉高校前 · Slam Dunk crossing", nt: "There's a small park next to the crossing for photos. The station is a few dozen metres away." },
+      { t: "15:30–17:00", src: "plan", ttl: "江之島 · sunset from the bridge", nt: "Two stops further. Walk the quiet street down to the sea and cross the bridge. Sunset is about 16:45." },
+      { t: "17:30", src: "plan", ttl: "Back: Fujisawa → Odakyu Enoshima Line or JS → Shinjuku" },
+    ],
+    budget: { transport: 2800, food: 4000, cafe: 1500, tickets: 700, other: 0 }, bn: "JR ≈ ¥950 + Enoden pass ¥800 + Odakyu ≈ ¥600–1,000." },
+
+  { id: "d0103", phase: "p2", d: 3, m: "一月", dow: "日", we: true, en: "Sun 3 Jan", title: "豊洲 · お台場", area: "Toyosu · Odaiba", status: "open",
+    items: [
+      { t: "10:00", src: "idea", ttl: "teamLab Planets (Toyosu)", nt: "Timed tickets, so book ahead. You walk through water barefoot, so wear trousers that roll up. Good material for reels.", links: [L("Map", gm("teamLab Planets Tokyo"))] },
+      { t: "12:30", src: "idea", ttl: "Lunch · Toyosu Senkyaku Banrai (豊洲千客万来)", nt: "Edo-style food hall beside Toyosu Market. Check its New Year hours.", links: [L("Map", gm("Toyosu Senkyaku Banrai"))] },
+      { t: "14:30", src: "idea", ttl: "Yurikamome → Odaiba · DiverCity & Aqua City", nt: "Unicorn Gundam statue, malls with New Year sales.", links: [L("DiverCity Tokyo Plaza", gm("DiverCity Tokyo Plaza"))] },
+      { t: "17:00", src: "idea", ttl: "Odaiba Seaside Park · Rainbow Bridge at night" },
+      { t: "", src: "idea", ttl: "Rainy-day swap: Shinjuku 初売り", nt: "Isetan, Lumine and NEWoMan all hold New Year sales and lucky bags." },
+    ],
+    budget: { transport: 1200, food: 4500, cafe: 1000, tickets: 4000, other: 0 }, bn: "teamLab Planets ≈ ¥3,800–4,200 (price varies by date)." },
+
+  { id: "d0104", phase: "p2", d: 4, m: "一月", dow: "月", en: "Mon 4 Jan", title: "下北沢 · 中目黒", area: "Shimokitazawa → Daikanyama → Nakameguro", status: "open",
+    flag: "It's a Monday, so most museums are closed. This day is planned around shops and cafés. It's also 翟青兒's last full day.",
+    items: [
+      { t: "11:00", src: "idea", ttl: "下北沢 Shimokitazawa", nt: "Vintage clothing, Reload and Bonus Track (small shops and cafés along the old rail line).", links: [L("Bonus Track", gm("Bonus Track Shimokitazawa")), L("Reload", gm("Reload Shimokitazawa"))] },
+      { t: "14:30", src: "idea", ttl: "代官山 T-Site (Tsutaya Books)", nt: "A beautiful bookshop and good for magazines. Take the Inokashira Line to Shibuya, then the Tōyoko Line one stop.", links: [L("Map", gm("Daikanyama T-Site"))] },
+      { t: "16:30", src: "idea", ttl: "Starbucks Reserve Roastery Tokyo · Meguro River", nt: "Four floors in a Kengo Kuma building. Walk along the Meguro River afterwards.", links: [L("Map", gm("Starbucks Reserve Roastery Tokyo"))] },
+      { t: "19:00", src: "idea", ttl: "Farewell dinner · Ebisu Yokochō", nt: "Lively alley of small stalls, one stop from Nakameguro.", links: [L("Map", gm("Ebisu Yokocho"))] },
+    ],
+    budget: { transport: 800, food: 5000, cafe: 2500, tickets: 0, other: 0 } },
+
+  { id: "d0105", phase: "p3", d: 5, m: "一月", dow: "火", en: "Tue 5 Jan", title: "小江戸 川越", area: "Kawagoe day trip (Seibu line)", status: "planned",
+    flag: "Many sights in Kawagoe close around 16:30, so the paid ones are scheduled before 15:30.",
+    items: [
+      { t: "08:45", src: "plan", ttl: "SEIBU 1Day Pass · Seibu-Shinjuku → Hon-Kawagoe", nt: "¥1,000, foreigners only. Buy it with your passport at the Seibu-Shinjuku or Seibu-Ikebukuro ticket centre. It covers local and express trains only (Limited Express costs extra). About 1 hour with no transfer." },
+      { t: "10:00", src: "plan", ttl: "① 川越八幡宮", nt: "7 minutes on foot from Hon-Kawagoe. Known for its 結緣銀杏 (matchmaking ginkgo)." },
+      { t: "10:40", src: "plan", ttl: "② 喜多院 + ③ 仙波東照宮", nt: "The 五百羅漢 (500 Arhats) are at Kita-in, and Senba Tōshōgū is one of Japan's three great Tōshōgū shrines." },
+      { t: "12:00", src: "plan", ttl: "Lunch · 小川菊 unagi", nt: "Expect a queue. Get your number first, then walk around while you wait.", links: [L("Map", gm("Ogawakiku Kawagoe"))] },
+      { t: "13:30", src: "plan", ttl: "④ 熊野神社 + 蓮馨寺", nt: "Money-washing shrine: wash a coin and keep it in your wallet." },
+      { t: "14:10", src: "plan", ttl: "⑤ 旧山崎家別邸", nt: "House mixing Japanese and Western styles, with a garden." },
+      { t: "14:50", src: "plan", ttl: "⑥ 三芳野神社 + ⑦ 川越城本丸御殿" },
+      { t: "15:40", src: "plan", ttl: "⑧ 冰川神社", nt: "A matchmaking shrine about 1,500 years old." },
+      { t: "16:30", src: "plan", ttl: "⑨ 時の鐘 · 蔵造りの町並み · 菓子屋横丁", nt: "Bell tower, kurazukuri merchant houses and the old sweets alley. Try the sweet-potato desserts." },
+      { t: "17:15", src: "plan", ttl: "⑩ 大正浪漫夢通り → back to Shinjuku" },
+    ],
+    budget: { transport: 1200, food: 6000, cafe: 1500, tickets: 1000, other: 0 }, bn: "Unagi ≈ ¥5,000+. Sight fees are small (¥100–¥500 each)." },
+
+  { id: "d0106", phase: "p3", d: 6, m: "一月", dow: "水", en: "Wed 6 Jan", title: "池袋", area: "Ikebukuro", status: "partial",
+    flag: "Izumo Ikebukuro requires a booking. Reserve the 13:00 slot on Tabelog.",
+    items: [
+      { t: "10:30", src: "idea", ttl: "Sunshine City · Pokémon Center Mega Tokyo + Sunshine Aquarium", nt: "Look for the rooftop penguin tank that seems to fly over the city.", links: [L("Map", gm("Sunshine City Ikebukuro"))] },
+      { t: "13:00–14:30", src: "plan", ttl: "Lunch · Izumo Ikebukuro (unagi)", links: [L("Search on Tabelog", "https://tabelog.com/en/rstLst/?sw=Izumo+Ikebukuro")] },
+      { t: "15:00", src: "idea", ttl: "Seibu · Tobu · Ikebukuro PARCO · Animate", nt: "The winter sales are in full swing by this week." },
+      { t: "17:00", src: "idea", ttl: "Sunshine 60 Observatory (てんぼうパーク) · night view" },
+    ],
+    budget: { transport: 500, food: 8500, cafe: 1000, tickets: 4500, other: 0 }, bn: "Aquarium ≈ ¥2,600 + observatory ≈ ¥2,000." },
+
+  { id: "d0107", phase: "p3", d: 7, m: "一月", dow: "木", en: "Thu 7 Jan", title: "青山 · 表参道", area: "Aoyama · Omotesando", status: "partial",
+    items: [
+      { t: "10:30", src: "idea", ttl: "Nezu Museum (根津美術館) + garden", nt: "Kengo Kuma building with a garden café. Closed Mondays; check the New Year schedule.", links: [L("Map", gm("Nezu Museum"))] },
+      { t: "12:30", src: "idea", ttl: "Lunch on Omotesando" },
+      { t: "14:00", src: "plan", ttl: "AURALEE", nt: "Item from your list. Try it on in person.", links: [L("Item", "https://auralee.jp/item/detail/1_1_A26AC03WM_1/2500"), L("Map", gm("AURALEE Aoyama"))] },
+      { t: "15:30", src: "idea", ttl: "Omotesando Hills · GYRE · Cat Street sales" },
+      { t: "17:00", src: "idea", ttl: "Café Kitsuné Aoyama or Taro Okamoto Memorial Museum", nt: "The Okamoto museum closes on Tuesdays; Thursday is fine.", links: [L("Café Kitsuné", gm("Cafe Kitsune Aoyama")), L("Taro Okamoto Museum", gm("Taro Okamoto Memorial Museum"))] },
+    ],
+    budget: { transport: 500, food: 4500, cafe: 1500, tickets: 1500, other: 0 }, bn: "AURALEE not included." },
+
+  { id: "d0108", phase: "p3", d: 8, m: "一月", dow: "金", en: "Fri 8 Jan", title: "上野 · 谷中", area: "Ueno → Yanaka (下町 old town)", status: "open",
+    items: [
+      { t: "10:00", src: "idea", ttl: "Tokyo National Museum (東京国立博物館)", nt: "Start with the Honkan galleries (samurai armour, ukiyo-e).", links: [L("Map", gm("Tokyo National Museum"))] },
+      { t: "12:30", src: "idea", ttl: "Ameyoko market street · lunch" },
+      { t: "14:30", src: "idea", ttl: "Yanaka Ginza + かやば珈琲 Kayaba Coffee", nt: "Old-town shopping street. Kayaba is a 1938 kissaten known for its egg sandwich.", links: [L("Kayaba Coffee", gm("Kayaba Coffee Yanaka"))] },
+      { t: "16:30", src: "idea", ttl: "Nezu Shrine (根津神社) torii tunnel", links: [L("Map", gm("Nezu Shrine"))] },
+      { t: "", src: "idea", ttl: "Alternative: Ghibli Museum (Mitaka)", nt: "January tickets usually go on sale on 10 Dec through Lawson Ticket, and they sell out quickly. Closed Tuesdays." },
+    ],
+    budget: { transport: 600, food: 4500, cafe: 1500, tickets: 1000, other: 0 } },
+
+  { id: "d0109", phase: "p3", d: 9, m: "一月", dow: "土", we: true, en: "Sat 9 Jan", title: "帰国 · Departure", area: "Last shopping → airport", status: "open",
+    flag: "Your flight time isn't in the doc, and the header says 1–8 Jan while the list goes to 9 Jan. Confirm which day you fly.",
+    items: [
+      { t: "Morning", src: "idea", ttl: "Omiyage run · Tokyo Station Character Street / Gransta", nt: "Or Don Quijote for tax-free snacks and cosmetics. Bring your passport." },
+      { t: "−3 h", src: "idea", ttl: "Skyliner (Nippori/Ueno) or N'EX → airport", nt: "Leave at least 3 hours before departure." },
+    ],
+    budget: { transport: 3000, food: 3500, cafe: 0, tickets: 0, other: 0 } },
+];
+
+const REVIEW = [
+  { k: "fix", ttl: "Ginza time clash fixed (28 Dec)", p: "TOMORROWLAND (14:00–15:00) and Tricolore tea (14:00) overlapped. Shopping is now 13:15–15:00 and tea is at 15:00." },
+  { k: "fix", ttl: "No bed after 31 Dec", p: "The Airbnb ends 31 Dec at 12:00. Nothing is booked for 31 Dec – 9 Jan. Your Kamakura and Kawagoe notes both assume a Shinjuku base." },
+  { k: "fix", ttl: "Hair colour on 1 Jan", p: "Many salons close 1–3 Jan. Confirm with the stylist now or move it to 4 or 7 Jan." },
+  { k: "check", ttl: "Kamakura on 2 Jan = hatsumōde crowds", p: "Tsurugaoka Hachimangū is extremely busy on 1–3 Jan. Swapping with 4 Jan (Monday) gives you a quieter day. 2 Jan is also the big 福袋 lucky-bag day in Tokyo." },
+  { k: "book", ttl: "Book ahead", p: "Izumo Ikebukuro (6 Jan, required) · Skytree 15:30 slot (30 Dec) · teamLab Planets (3 Jan) · Ghibli Museum if you want it (tickets on sale ≈10 Dec)." },
+  { k: "check", ttl: "Airbnb payment", p: "The share was due by 10 Nov ($1,796 each, three people; your doc doesn't say which currency). Confirm all three have paid." },
+  { k: "check", ttl: "Unclear notes", p: "29 Dec has “must go between 5–6pm” with no place name, so I attached it to the link just above it. The doc header says 1–8 Jan but the list runs to 9 Jan, and there's no return flight time." },
+  { k: "check", ttl: "Closures", p: "Most museums close on Mondays (4 Jan) and many restaurants close 31 Dec – 3 Jan. Kawagoe sights shut around 16:30." },
+];
+
+const WISH = [
+  { when: "28 Dec", what: "PUBLIC TOKYO coat", pri: true, url: "https://public-tokyo.com/shop/g/g166651002766" },
+  { when: "28 Dec", what: "TOMORROWLAND / Caban coat (Ginza Mitsukoshi)", url: "https://store.tomorrowland.co.jp/item/caban/59099409001.html?color_id=49" },
+  { when: "28 Dec", what: "COACH Chelsea shoulder bag", url: "https://ca.coach.com/en/products/chelsea-shoulder-bag-/CDS58.html?frp=CDS58+B4MPL" },
+  { when: "28 Dec", what: "UNIQLO item E486461", url: "https://www.uniqlo.com/jp/ja/products/E486461-000/00?colorDisplayCode=09&sizeDisplayCode=999" },
+  { when: "27 Dec", what: "Vivienne Westwood Red Label · Laforet", url: "https://www.viviennewestwood.com/storedetails/?storeID=Tokyo-Red-Label-Concept-Store-Laforet" },
+  { when: "29 Dec", what: "Dior card wallet", url: "https://www.dior.com/en_ca/fashion/products/2ESCH135YSE_H03E" },
+  { when: "31 Dec", what: "洋服の青山", url: "https://www.y-aoyama.jp/en/ec/shop/r/r684/?lc=topBnr_category_m" },
+  { when: "7 Jan", what: "AURALEE", url: "https://auralee.jp/item/detail/1_1_A26AC03WM_1/2500" },
+];
+
+const REELS = [
+  ["拿熱水燙死我", "https://www.instagram.com/reel/DclA52WJA_2/?dlrf=eXBvZW54NzdkdDcw"],
+  ["You're beautiful", "https://www.instagram.com/reel/DfLt70CpjYI/?psln=MW91enN2NHBjcWJraQ=="],
+  ["正義的光", "https://www.instagram.com/reel/DfHOQOVJ7qh/?cplk=bW1neWFtaGRkMjJr"],
+  ["Shut up", "https://www.instagram.com/reel/De106BjI4PY/?exln=MWd5a2QyeDBicGN3dA=="],
+  ["發癲片", "https://www.instagram.com/reel/DeJ-vTezeBJ/?vrfl=MXJjODg0djR0aTJ3NQ=="],
+  ["都是山", "https://www.instagram.com/reel/DeBwa8ihO1I/?xtok=ZXZ4MDlrem9ob3Zu"],
+  ["高難度舞蹈", "https://www.instagram.com/reel/DexFclkSXbj/?rpxt=bHF4b29jZGZwejdw"],
+  ["背刺我就是這樣", "https://www.instagram.com/reel/DetxV7VS52W/?srtk=MXBzb2drNXZxN25qOQ=="],
+  ["Grad trip", "https://www.instagram.com/reel/Dcx4K1ahQS_/?mdxt=Njlhdjc4eGpsNmR0"],
+  ["閨密宣言", "https://www.instagram.com/reel/Dcn8l2jyFNV/?dlrf=MXdteGJhZjkxano2MA=="],
+  ["Oppa Gangnam style", "https://www.instagram.com/reel/DemBN2BPH3U/?exln=Zm9wMTN1anc2MHVk"],
+  ["手裏拿着刀沒法抱你", "https://www.instagram.com/reel/Dd1B8P6ybF9/?xtok=aTJmaHFpM3Jzb2tj"],
+  ["落藥", "https://www.instagram.com/reel/De6nONmhO3X/?vrfl=MXBncDFnNHB5dWZqbQ=="],
+  ["發癲片2號", "https://www.instagram.com/reel/Dcn-ZiVSRzF/?vrfl=MnI5anFpZmwwNDRi"],
+  ["發癲片3號", "https://www.instagram.com/reel/DcVmPn0IXqi/?psln=aWN3YjJpODZuM2wx"],
+  ["Omg我一直愛上他", "https://www.instagram.com/reel/DewO1J6yq0n/?exln=cnhiNGZyY3YyeXg0"],
+  ["草莓", "https://www.instagram.com/reel/DccqxKnRroA/?dlrf=MWRnemdkbnVpcDc1MA=="],
+  ["泡椒", "https://www.instagram.com/reel/DfMf88BT9YL/?xtok=ZDdoNGlsaHZpZXk="],
+  ["Bullies", "https://www.instagram.com/reel/DegLkyTRLcb/?rpxt=ZXVoM3d1eDFoYmxr"],
+];
+
+/* ---------- Money ---------- */
+const DEFAULT_RATES = { HKD: 20.1, CAD: 111.9 }; // JPY per 1 unit, mid-market ≈ late Oct / early Nov 2026
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+};
+const total = b => b.transport + b.food + b.cafe + b.tickets + b.other;
+const fmtY = n => "¥" + Math.round(n).toLocaleString("en-US");
+const fmtH = (n, r) => "HK$" + Math.round(n / r.HKD).toLocaleString("en-US");
+const fmtC = (n, r) => "C$" + Math.round(n / r.CAD).toLocaleString("en-US");
+const CATS = [["transport", "Transport"], ["food", "Meals"], ["cafe", "Cafés & snacks"], ["tickets", "Tickets & entry"], ["other", "Other"]];
+const MAXDAY = Math.max(...DAYS.map(d => total(d.budget)));
+
+/* ---------- Components ---------- */
+function Item({ it }) {
+  return html`<li className=${"it " + (it.src === "idea" ? "idea" : "")}>
+    <div className="time">${it.t}</div>
+    <div className="content">
+      <div className="ttl">${it.ttl}${it.src === "idea" ? html`<span className="tag">提案 suggestion</span>` : null}${it.tag ? html`<span className="tag moved">${it.tag}</span>` : null}</div>
+      ${it.nt ? html`<p className="nt">${it.nt}</p>` : null}
+      ${it.links ? html`<div className="links">${it.links.map(l => html`<a key=${l.url} href=${l.url} target="_blank" rel="noopener">${l.label} ↗</a>`)}</div>` : null}
+    </div>
+  </li>`;
+}
+
+function Budget({ b, bn, rates }) {
+  const t = total(b);
+  return html`<aside className="budget" aria-label="Daily budget">
+    <div className="lab">Daily budget · per person</div>
+    <div className="yen">${fmtY(t)}</div>
+    <div className="fx"><span>${fmtH(t, rates)}</span><span>${fmtC(t, rates)}</span></div>
+    <div className="bar-track"><div className="bar-fill" style=${{ width: (t / MAXDAY * 100) + "%" }}></div></div>
+    <dl>${CATS.filter(([k]) => b[k]).map(([k, lab]) => html`<${React.Fragment} key=${k}><dt>${lab}</dt><dd>${fmtY(b[k])}</dd></${React.Fragment}>`)}</dl>
+    ${bn ? html`<p className="bn">${bn}</p>` : null}
+  </aside>`;
+}
+
+function Day({ d, rates }) {
+  const statusLabel = { planned: "planned", partial: "partly planned", open: "open day · suggestions" }[d.status];
+  return html`<article className="day" id=${d.id}>
+    <div className="rail">
+      <div className="num">${d.d}</div>
+      <div className="vert">${d.m}</div>
+      <div className=${"dow" + (d.we ? " we" : "")}>${d.dow}</div>
+    </div>
+    <div className="body">
+      <div className="main">
+        <div className="dhead"><h4>${d.title}</h4><span className=${"pill " + d.status}>${statusLabel}</span></div>
+        <p className="crew">${d.en} · ${d.area} · ${PHASES[d.phase].crew}</p>
+        ${d.flag ? html`<p className="flag"><b>注意 </b>${d.flag}</p>` : null}
+        <ol className="tl">${d.items.map((it, i) => html`<${Item} key=${i} it=${it} />`)}</ol>
+      </div>
+      <${Budget} b=${d.budget} bn=${d.bn} rates=${rates} />
+    </div>
+  </article>`;
+}
+
+function App() {
+  const [rates, setRates] = useState(() => store.get("trip.rates", DEFAULT_RATES));
+  const [phase, setPhase] = useState(() => store.get("trip.phase", "all"));
+  const [reels, setReels] = useState(() => store.get("trip.reels", {}));
+  useEffect(() => store.set("trip.rates", rates), [rates]);
+  useEffect(() => store.set("trip.phase", phase), [phase]);
+  useEffect(() => store.set("trip.reels", reels), [reels]);
+
+  const shown = phase === "all" ? DAYS : DAYS.filter(d => d.phase === phase);
+  const grand = DAYS.reduce((s, d) => s + total(d.budget), 0);
+  const openCount = DAYS.filter(d => d.status !== "planned").length;
+  const reelDone = Object.values(reels).filter(Boolean).length;
+
+  const setRate = (k, v) => { const n = parseFloat(v); if (n > 0) setRates(r => ({ ...r, [k]: n })); };
+
+  const groups = useMemo(() => {
+    const g = []; shown.forEach(d => { const last = g[g.length - 1]; if (last && last.phase === d.phase) last.days.push(d); else g.push({ phase: d.phase, days: [d] }); }); return g;
+  }, [phase]);
+
+  return html`<${React.Fragment}>
+    <header className="hero">
+      <div className="wrap hero-inner">
+        <div>
+          <div className="eyebrow">Itinerary · 行程表 · 26 Dec 2026 – 9 Jan 2027</div>
+          <h1>東京 <span className="thin">Winter</span> 2026–27</h1>
+          <p className="lede">Five days in Tokyo with 石凱婷 and 翟青兒, New Year with 翟青兒, then solo days. I've organised everything from your planning doc by day, re-timed one clash and filled the blank slots with suggestions marked 提案.</p>
+          <div className="stats">
+            <div className="stat"><b>15</b><span>days</span></div>
+            <div className="stat"><b>${openCount}</b><span>days with suggestions</span></div>
+            <div className="stat"><b>${fmtY(grand / DAYS.length)}</b><span>avg / day / person</span></div>
+            <div className="stat"><b>${fmtH(grand, rates)} · ${fmtC(grand, rates)}</b><span>trip spending, ex-lodging & shopping</span></div>
+          </div>
+        </div>
+        <div className="seal" aria-hidden="true">旅</div>
+      </div>
+    </header>
+
+    <nav className="bar" aria-label="Days">
+      <div className="wrap bar-inner">
+        <div className="chips">${DAYS.map(d => html`<a key=${d.id} className=${"chip" + (d.status === "open" ? " open" : "")} href=${"#" + d.id} title=${d.en}><small>${d.d >= 26 ? "Dec" : "Jan"}</small><b>${d.d}</b></a>`)}</div>
+        <div className="filters" role="group" aria-label="Filter by part of trip">
+          ${[["all", "All"], ["p1", "26–31 Dec"], ["p2", "1–4 Jan"], ["p3", "5–9 Jan"]].map(([k, lab]) => html`<button key=${k} className="fbtn" aria-pressed=${phase === k} onClick=${() => setPhase(k)}>${lab}</button>`)}
+        </div>
+      </div>
+    </nav>
+
+    <main className="wrap">
+      <section className="block" aria-labelledby="rv">
+        <h2 id="rv">Review <span className="jp">見直し</span></h2>
+        <p className="sub">What I changed, and what still needs a booking or a decision from you.</p>
+        <div className="legend"><span><i style=${{ background: "var(--shu)" }}></i>Fix</span><span><i style=${{ background: "var(--ai)" }}></i>Book</span><span><i style=${{ background: "var(--matsu)" }}></i>Check</span></div>
+        <div className="review">${REVIEW.map((r, i) => html`<div key=${i} className=${"note " + r.k}><div className="mark">${{ fix: "直", book: "予", check: "確" }[r.k]}</div><h3>${r.ttl}</h3><p>${r.p}</p></div>`)}</div>
+      </section>
+
+      <section className="block" aria-labelledby="it">
+        <h2 id="it">Day by day <span className="jp">日程</span></h2>
+        <p className="sub">Filled dots are from your doc. Hollow green dots marked 提案 are my suggestions for blank slots. Budgets are per person and cover transport, food, cafés and entry fees. Accommodation and the shopping wishlist are excluded.</p>
+        <div className="rates">
+          <span>Exchange rates (edit to match your bank):</span>
+          <label htmlFor="rHKD">1 HKD = ¥<input id="rHKD" type="number" step="0.1" min="1" defaultValue=${rates.HKD} key=${"h" + rates.HKD} onBlur=${e => setRate("HKD", e.target.value)} onKeyDown=${e => e.key === "Enter" && e.target.blur()} /></label>
+          <label htmlFor="rCAD">1 CAD = ¥<input id="rCAD" type="number" step="0.1" min="1" defaultValue=${rates.CAD} key=${"c" + rates.CAD} onBlur=${e => setRate("CAD", e.target.value)} onKeyDown=${e => e.key === "Enter" && e.target.blur()} /></label>
+          <button onClick=${() => setRates(DEFAULT_RATES)}>Reset</button>
+          <span style=${{ color: "var(--ink-3)", fontSize: "12px" }}>Default: mid-market, late Oct – early Nov 2026</span>
+        </div>
+        ${groups.map(g => html`<div key=${g.phase}>
+          <div className="phase"><h3>${PHASES[g.phase].title}</h3><span>${PHASES[g.phase].en} · ${PHASES[g.phase].range}</span></div>
+          ${g.days.map(d => html`<${Day} key=${d.id} d=${d} rates=${rates} />`)}
+        </div>`)}
+      </section>
+
+      <section className="block" aria-labelledby="bt">
+        <h2 id="bt">Budget at a glance <span className="jp">予算</span></h2>
+        <p className="sub">Per person, excluding accommodation and the wishlist. Add about 10–15% buffer for things you don't plan.</p>
+        <div className="tbl-wrap"><table>
+          <thead><tr><th>Date</th><th>Day</th><th>JPY</th><th>HKD</th><th>CAD</th></tr></thead>
+          <tbody>${DAYS.map(d => { const t = total(d.budget); return html`<tr key=${d.id}><td>${d.en.split(" · ")[0]}</td><td>${d.title}</td><td><span className="mini" style=${{ width: Math.round(t / MAXDAY * 60) + "px" }}></span>${fmtY(t)}</td><td>${fmtH(t, rates)}</td><td>${fmtC(t, rates)}</td></tr>`; })}</tbody>
+          <tfoot><tr><td>15 days</td><td></td><td>${fmtY(grand)}</td><td>${fmtH(grand, rates)}</td><td>${fmtC(grand, rates)}</td></tr></tfoot>
+        </table></div>
+      </section>
+
+      <section className="block two" aria-label="Shopping and reels">
+        <div className="panel">
+          <h3>Shopping wishlist <span className="count">買い物</span></h3>
+          <ul className="wish">${WISH.map(w => html`<li key=${w.url}><span className="when">${w.when}</span><span><a href=${w.url} target="_blank" rel="noopener">${w.what} ↗</a>${w.pri ? html`<span className="pri">PRIORITY</span>` : null}</span></li>`)}</ul>
+          <p className="bn" style=${{ fontSize: "12px", color: "var(--ink-3)", margin: "14px 0 0" }}>Tax-free: bring your passport and spend over ¥5,000 in one store on the same day.</p>
+        </div>
+        <div className="panel">
+          <h3>Reels to film <span className="count">${reelDone} / ${REELS.length} done</span></h3>
+          <ul className="reels">${REELS.map(([name, url]) => html`<li key=${url} className=${reels[url] ? "done" : ""}><label><input type="checkbox" id=${"reel-" + url.split("/")[4]} checked=${!!reels[url]} onChange=${e => setReels(r => ({ ...r, [url]: e.target.checked }))} /><a href=${url} target="_blank" rel="noopener">${name}</a></label></li>`)}</ul>
+        </div>
+      </section>
+    </main>
+
+    <footer className="wrap">
+      <p>Built from “2026-2027 Japan” (your planning doc). Prices are estimates from recent published rates and can change. Exchange rates and the reels checklist are saved in this browser only.</p>
+      <p><a href="https://drive.google.com/drive/folders/1Sm75n50jdBnTJ60mten3uC5hYRvH6PIx?usp=sharing" target="_blank" rel="noopener">Shared Google Drive folder ↗</a></p>
+    </footer>
+  </${React.Fragment}>`;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(html`<${App} />`);
+</script>
