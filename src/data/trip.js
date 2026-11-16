@@ -36,6 +36,8 @@ export const DAYS = [
       { t: "11:00–12:30", src: "idea", ttl: T("明治神宮森林散步", "Meiji Jingu forest walk"), nt: T("免費，原宿站步行 5 分鐘。這週是新年人潮前最清靜的時候。", "Free, five minutes from Harajuku Station. This week is the calm window before the New Year crowds."), links: [L(MAP, gm("Meiji Jingu"))] },
       { t: "13:00–14:30", src: "plan", ttl: T("午餐：原宿餐廳 #1", "Lunch: Harajuku pick #1"), links: [L("Tabelog 13095244", "https://tabelog.com/en/tokyo/A1306/A130601/13095244/")] },
       { t: "15:00–19:00", src: "plan", ttl: T("原宿行街", "Shopping"), nt: T("哈利波特專賣店 → Laforet 的 Vivienne Westwood Red Label → 竹下通 → 貓街。你文件裡的原宿地圖在下方。", "Harry Potter Shop → Vivienne Westwood Red Label at Laforet → Takeshita-dori → Cat Street. Your Harajuku map is below."), links: [L(T("哈利波特專賣店", "Harry Potter Shop"), gm("Harry Potter Shop Harajuku")), L("Vivienne Westwood @ Laforet", "https://www.viviennewestwood.com/storedetails/?storeID=Tokyo-Red-Label-Concept-Store-Laforet")] },
+      { t: "15:00–19:00", src: "idea", ttl: "niko and ... TOKYO（原宿）", nt: T("生活雜貨與服飾店，原宿站附近，可順路與 LAKOLE 一併逛。", "Lifestyle goods and clothing shop in Harajuku, easy to combine with LAKOLE."), links: [L("niko and ...", gm("niko and ... TOKYO Harajuku"))] },
+      { t: "15:00–19:00", src: "idea", ttl: "LAKOLE · ST", nt: T("LAKOLE 原宿一帶的分店與 ST，順路加入行街路線（竹下通 / 貓街之間）。出發前請確認 ST 是指哪間店。", "LAKOLE (and ST) fit along the Takeshita-dori / Cat Street route. Please confirm which shop ST refers to before you go."), links: [L("LAKOLE", gm("LAKOLE Harajuku"))] },
       { t: "19:00", src: "plan", ttl: T("晚餐：原宿餐廳 #2", "Dinner: Harajuku pick #2"), links: [L("Tabelog 13195738", "https://tabelog.com/tw/tokyo/A1306/A130601/13195738/dtlmenu/")] },
     ],
     spots: [
@@ -54,6 +56,7 @@ export const DAYS = [
       { t: "12:00–13:00", src: "plan", ttl: T("午餐：仙台たんや利久（Gransta 八重洲）或 炭焼うな富士（有樂町）", "Lunch: Sendai Tanya Rikyu (Gransta Yaesu) or Sumiyaki Unafuji (Yurakucho)"), nt: T("鰻富士要排隊，選它就 11:30 前到；利久在東京站內，較方便。", "Unafuji queues, so arrive by 11:30 if you pick it. Rikyu is inside Tokyo Station and easier."), links: [L("Tanya Rikyu", "https://tabelog.com/en/tokyo/A1302/A130201/13119727/dtlmenu/"), L("Unafuji", "https://tabelog.com/en/tokyo/A1301/A130103/13250032/dtlmenu/")] },
       { t: "13:15–15:00", src: "plan", tag: "retimed", ttl: T("大衣與手袋", "Coat & bag run"), nt: T("先去 PUBLIC TOKYO（大衣優先），再到銀座三越 TOMORROWLAND（CABaN 大衣）、COACH 銀座（Chelsea）、UNIQLO 銀座。", "PUBLIC TOKYO first (coat priority), then TOMORROWLAND at Ginza Mitsukoshi (CABaN coat), COACH Ginza (Chelsea bag) and UNIQLO Ginza."), links: [L("PUBLIC TOKYO", "https://public-tokyo.com/shop/g/g166651002766"), L("TOMORROWLAND", "https://store.tomorrowland.co.jp/item/caban/59099409001.html?color_id=49"), L(T("地圖", "Map pin"), "https://maps.app.goo.gl/Ud4K3VpefH7zK9fg7?g_st=ic")] },
       { t: "15:00–16:30", src: "plan", tag: "retimed", ttl: T("Tricolore 本店下午茶（免預約）", "Afternoon tea · Tricolore Honten (walk-in)"), nt: T("招牌是朱古力閃電泡芙，加上侍應即場倒的冰咖啡。最近車站：東銀座。", "Get the chocolate éclair and the iced coffee poured at the table. Nearest station: Higashi-Ginza."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13007761/")] },
+      { t: "16:30–17:00", src: "idea", ttl: "GINZA SIX", nt: T("由 Tricolore 步行約 10 分鐘，商場營業至 20:30，之後可再逛。如時間不夠，可把 Hills House 打卡縮短。", "About 10 minutes on foot from Tricolore; the mall is open until 20:30. Squeeze it in here, or shorten the Hills House stop if time runs short."), links: [L("GINZA SIX", "https://ginza6.tokyo/en/"), L(MAP, gm("GINZA SIX"))] },
       { t: "17:00–17:35", src: "plan", ttl: T("Ginza Sand（免預約）", "Ginza Sand (walk-in)"), nt: T("推介玉子三文治和炸牛排三文治。", "Try the egg sando and the katsu sando."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13231045/")] },
       { t: "18:00–20:00", src: "plan", ttl: T("Hills House Sky Room 打卡（免預約）", "Hills House Sky Room · photo stop (walk-in)"), nt: T("麻布台 Hills 森 JP Tower 34 樓。由銀座乘日比谷線到神谷町約 10 分鐘。16:40 已天黑，正好看東京鐵塔夜景。", "Azabudai Hills Mori JP Tower, 34F. The Hibiya Line from Ginza to Kamiyacho takes about 10 min. It's dark by 16:40, so you'll get the Tokyo Tower night view."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1307/A130701/13291562/")] },
     ],
@@ -291,6 +294,7 @@ export const REELS = [
   ["草莓", "https://www.instagram.com/reel/DccqxKnRroA/?dlrf=MWRnemdkbnVpcDc1MA=="],
   ["泡椒", "https://www.instagram.com/reel/DfMf88BT9YL/?xtok=ZDdoNGlsaHZpZXk="],
   ["Bullies", "https://www.instagram.com/reel/DegLkyTRLcb/?rpxt=ZXVoM3d1eDFoYmxr"],
+  ["新片 (DeBlJX)", "https://www.instagram.com/reel/DeBlJX_sxpf/?xtok=YjhjMTlpMTd4MXRm"],
 ];
 
 export const DEFAULT_RATES = { HKD: 20.1, CAD: 111.9 }; // JPY per 1 unit
