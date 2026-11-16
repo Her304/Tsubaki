@@ -36,6 +36,7 @@ export const DAYS = [
       { t: "11:00–12:30", src: "idea", ttl: T("明治神宮森林散步", "Meiji Jingu forest walk"), nt: T("免費，原宿站步行 5 分鐘。這週是新年人潮前最清靜的時候。", "Free, five minutes from Harajuku Station. This week is the calm window before the New Year crowds."), links: [L(MAP, gm("Meiji Jingu"))] },
       { t: "13:00–14:30", src: "plan", ttl: T("午餐：原宿餐廳 #1", "Lunch: Harajuku pick #1"), links: [L("Tabelog 13095244", "https://tabelog.com/en/tokyo/A1306/A130601/13095244/")] },
       { t: "15:00–19:00", src: "plan", ttl: T("原宿行街", "Shopping"), nt: T("哈利波特專賣店 → Laforet 的 Vivienne Westwood Red Label → 竹下通 → 貓街。你文件裡的原宿地圖在下方。", "Harry Potter Shop → Vivienne Westwood Red Label at Laforet → Takeshita-dori → Cat Street. Your Harajuku map is below."), links: [L(T("哈利波特專賣店", "Harry Potter Shop"), gm("Harry Potter Shop Harajuku")), L("Vivienne Westwood @ Laforet", "https://www.viviennewestwood.com/storedetails/?storeID=Tokyo-Red-Label-Concept-Store-Laforet")] },
+      { t: "15:00–19:00", src: "idea", ttl: "niko and ... TOKYO（原宿）", nt: T("生活雜貨與服飾店，原宿站附近，可順路與 LAKOLE 一併逛。", "Lifestyle goods and clothing shop in Harajuku, easy to combine with LAKOLE."), links: [L("niko and ...", gm("niko and ... TOKYO Harajuku"))] },
       { t: "15:00–19:00", src: "idea", ttl: "LAKOLE · ST", nt: T("LAKOLE 原宿一帶的分店與 ST，順路加入行街路線（竹下通 / 貓街之間）。出發前請確認 ST 是指哪間店。", "LAKOLE (and ST) fit along the Takeshita-dori / Cat Street route. Please confirm which shop ST refers to before you go."), links: [L("LAKOLE", gm("LAKOLE Harajuku"))] },
       { t: "19:00", src: "plan", ttl: T("晚餐：原宿餐廳 #2", "Dinner: Harajuku pick #2"), links: [L("Tabelog 13195738", "https://tabelog.com/tw/tokyo/A1306/A130601/13195738/dtlmenu/")] },
     ],
@@ -293,6 +294,7 @@ export const REELS = [
   ["草莓", "https://www.instagram.com/reel/DccqxKnRroA/?dlrf=MWRnemdkbnVpcDc1MA=="],
   ["泡椒", "https://www.instagram.com/reel/DfMf88BT9YL/?xtok=ZDdoNGlsaHZpZXk="],
   ["Bullies", "https://www.instagram.com/reel/DegLkyTRLcb/?rpxt=ZXVoM3d1eDFoYmxr"],
+  ["新片 (DeBlJX)", "https://www.instagram.com/reel/DeBlJX_sxpf/?xtok=YjhjMTlpMTd4MXRm"],
 ];
 
 export const DEFAULT_RATES = { HKD: 20.1, CAD: 111.9 }; // JPY per 1 unit
