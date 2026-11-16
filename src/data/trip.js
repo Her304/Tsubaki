@@ -295,6 +295,7 @@ export const REELS = [
   ["泡椒", "https://www.instagram.com/reel/DfMf88BT9YL/?xtok=ZDdoNGlsaHZpZXk="],
   ["Bullies", "https://www.instagram.com/reel/DegLkyTRLcb/?rpxt=ZXVoM3d1eDFoYmxr"],
   ["新片 (DeBlJX)", "https://www.instagram.com/reel/DeBlJX_sxpf/?xtok=YjhjMTlpMTd4MXRm"],
+  ["新片 (DfUH3B)", "https://www.instagram.com/reel/DfUH3BIoUXz/?xtok=dzllaXZsbTRiZ2d5"],
 ];
 
 export const DEFAULT_RATES = { HKD: 20.1, CAD: 111.9 }; // JPY per 1 unit
