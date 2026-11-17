@@ -69,7 +69,7 @@ export const DAYS = [
       { img: "azabudai", name: T("麻布台的東京鐵塔夜景", "Tokyo Tower from Azabudai"), price: T("免費", "Free") },
       { img: "ginza", name: T("銀座和光", "Ginza Wako"), price: "" },
     ],
-    budget: { transport: 2200, food: 7000, cafe: 4000, tickets: 2500, other: 0 }, bn: T("門票為史努比博物館（約 ¥2,500）；交通含町田來回。大衣、手袋未排入行程，仍列在「手信與購物」。", "Tickets = Snoopy Museum (≈ ¥2,500); transport includes the Machida round trip. Coat and bag stops are no longer scheduled but stay in “Souvenirs & shopping”."), souvenir: 3000, souvenirNote: T("東京站 Gransta 手信", "Gransta snacks at Tokyo Station"),
+    budget: { transport: 2200, food: 7000, cafe: 4000, tickets: 2500, other: 0 }, bn: T("門票為史努比博物館（約 ¥2,500）；交通含町田來回。購物改為史努比博物館禮品店，列在「手信與購物」。", "Tickets = Snoopy Museum (≈ ¥2,500); transport includes the Machida round trip. Shopping is now the Snoopy Museum gift shop, listed in “Souvenirs & shopping”."), souvenir: 5000, souvenirNote: T("史努比博物館禮品店 + 東京站 Gransta 手信", "Snoopy Museum gift shop + Gransta snacks at Tokyo Station"),
   },
   {
     id: "d1229", phase: "p1", d: 29, mon: 12, dow: T("週二", "Tue"),
@@ -266,9 +266,7 @@ export const DAYS = [
 
 /* Shopping wishlist: price in JPY. kind: "official" = from the store page, "est" = estimate */
 export const WISH = [
-  { id: "public", day: "28/12", name: T("PUBLIC TOKYO 大衣", "PUBLIC TOKYO coat"), price: 35000, kind: "est", pri: true, url: "https://public-tokyo.com/shop/g/g166651002766", note: T("官網要登入才看到價錢", "Store page needs a login to show the price") },
   { id: "coach", day: "28/12", name: T("COACH Chelsea 肩袋", "COACH Chelsea shoulder bag"), price: 60000, kind: "est", url: "https://ca.coach.com/en/products/chelsea-shoulder-bag-/CDS58.html?frp=CDS58+B4MPL" },
-  { id: "uniqlo", day: "28/12", name: T("UNIQLO U 軟塗層索繩袋（黑）", "UNIQLO U soft coated drawstring bag (black)"), price: 2990, kind: "est", url: "https://www.uniqlo.com/jp/ja/products/E486461-000/00?colorDisplayCode=09&sizeDisplayCode=999" },
   { id: "vw", day: "27/12", name: "Vivienne Westwood Red Label · Laforet", price: 30000, kind: "est", url: "https://www.viviennewestwood.com/storedetails/?storeID=Tokyo-Red-Label-Concept-Store-Laforet" },
   { id: "dior", day: "29/12", name: T("Dior 卡片銀包", "Dior card wallet"), price: 75000, kind: "est", url: "https://www.dior.com/en_ca/fashion/products/2ESCH135YSE_H03E" },
   { id: "aoyama", day: "31/12", name: T("洋服の青山", "Yōfuku no Aoyama"), price: 10000, kind: "est", url: "https://www.y-aoyama.jp/en/ec/shop/r/r684/?lc=topBnr_category_m" },
