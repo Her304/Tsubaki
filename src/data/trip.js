@@ -50,15 +50,17 @@ export const DAYS = [
   {
     id: "d1228", phase: "p1", d: 28, mon: 12, dow: T("週一", "Mon"),
     cjk: "銀座", romaji: "GINZA · AZABUDAI", verse: ["京橋月色", "麻布夜景"], color: "slate", art: "ginza_print", artShape: "panel",
-    title: T("銀座", "Ginza"), area: T("銀座 → 麻布台 Hills", "Ginza → Azabudai Hills"), status: "planned",
+    title: T("史努比博物館 · 銀座", "Snoopy Museum · Ginza"), area: T("史努比博物館 → 銀座 → 麻布台 Hills", "Snoopy Museum → Ginza → Azabudai Hills"), status: "planned",
     flag: T("Tricolore 逢週二休息，Ginza Sand 逢週日及假日休息，28 日（週一）兩間都有營業。", "Tricolore closes Tuesdays and Ginza Sand closes Sundays and holidays, so both are open on Monday the 28th."),
     items: [
-      { t: "12:00–13:00", src: "plan", ttl: T("午餐：仙台たんや利久（Gransta 八重洲）或 炭焼うな富士（有樂町）", "Lunch: Sendai Tanya Rikyu (Gransta Yaesu) or Sumiyaki Unafuji (Yurakucho)"), nt: T("鰻富士要排隊，選它就 11:30 前到；利久在東京站內，較方便。", "Unafuji queues, so arrive by 11:30 if you pick it. Rikyu is inside Tokyo Station and easier."), links: [L("Tanya Rikyu", "https://tabelog.com/en/tokyo/A1302/A130201/13119727/dtlmenu/"), L("Unafuji", "https://tabelog.com/en/tokyo/A1301/A130103/13250032/dtlmenu/")] },
-      { t: "13:15–15:00", src: "plan", tag: "retimed", ttl: T("大衣與手袋", "Coat & bag run"), nt: T("先去 PUBLIC TOKYO（大衣優先），再到銀座三越 TOMORROWLAND（CABaN 大衣）、COACH 銀座（Chelsea）、UNIQLO 銀座。", "PUBLIC TOKYO first (coat priority), then TOMORROWLAND at Ginza Mitsukoshi (CABaN coat), COACH Ginza (Chelsea bag) and UNIQLO Ginza."), links: [L("PUBLIC TOKYO", "https://public-tokyo.com/shop/g/g166651002766"), L("TOMORROWLAND", "https://store.tomorrowland.co.jp/item/caban/59099409001.html?color_id=49"), L(T("地圖", "Map pin"), "https://maps.app.goo.gl/Ud4K3VpefH7zK9fg7?g_st=ic")] },
-      { t: "15:00–16:30", src: "plan", tag: "retimed", ttl: T("Tricolore 本店下午茶（免預約）", "Afternoon tea · Tricolore Honten (walk-in)"), nt: T("招牌是朱古力閃電泡芙，加上侍應即場倒的冰咖啡。最近車站：東銀座。", "Get the chocolate éclair and the iced coffee poured at the table. Nearest station: Higashi-Ginza."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13007761/")] },
-      { t: "16:30–17:00", src: "idea", ttl: "GINZA SIX", nt: T("由 Tricolore 步行約 10 分鐘，商場營業至 20:30，之後可再逛。如時間不夠，可把 Hills House 打卡縮短。", "About 10 minutes on foot from Tricolore; the mall is open until 20:30. Squeeze it in here, or shorten the Hills House stop if time runs short."), links: [L("GINZA SIX", "https://ginza6.tokyo/en/"), L(MAP, gm("GINZA SIX"))] },
-      { t: "17:00–17:35", src: "plan", ttl: T("Ginza Sand（免預約）", "Ginza Sand (walk-in)"), nt: T("推介玉子三文治和炸牛排三文治。", "Try the egg sando and the katsu sando."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13231045/")] },
-      { t: "18:00–20:00", src: "plan", ttl: T("Hills House Sky Room 打卡（免預約）", "Hills House Sky Room · photo stop (walk-in)"), nt: T("麻布台 Hills 森 JP Tower 34 樓。由銀座乘日比谷線到神谷町約 10 分鐘。16:40 已天黑，正好看東京鐵塔夜景。", "Azabudai Hills Mori JP Tower, 34F. The Hibiya Line from Ginza to Kamiyacho takes about 10 min. It's dark by 16:40, so you'll get the Tokyo Tower night view."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1307/A130701/13291562/")] },
+      { t: "08:15–10:00", src: "idea", ttl: T("池袋 → 町田（鶴川站）→ 巴士到史努比博物館", "Ikebukuro → Machida area (Tsurukawa) → bus to the Snoopy Museum"), nt: T("博物館在東京郊外的町田，由池袋約 1 小時 15 分鐘（JR 到新宿，轉小田急線，再轉巴士）。巴士班次有限，出發前請在官網核對路線及時間。", "The museum is out in Machida, about 1 h 15 min from Ikebukuro (JR to Shinjuku, Odakyu line, then a bus). Buses are infrequent, so check the route and timetable on the official site before you go."), links: [L(T("交通", "Access"), "https://snoopymuseum.tokyo/en/"), L(MAP, gm("Snoopy Museum Tokyo"))] },
+      { t: "10:00–12:15", src: "idea", ttl: T("SNOOPY MUSEUM TOKYO 史努比博物館", "SNOOPY MUSEUM TOKYO"), nt: T("10:00 開館，需網上預約指定時段入場（約 ¥2,500，請以官網為準）。逢週二休館，28 日（週一）可去；年末開放日請先查官網。館內有咖啡廳和禮品店，記得預留時間。", "Opens at 10:00 with timed tickets booked online (about ¥2,500, check the official site). Closed Tuesdays, so Monday the 28th works; check the year-end opening days first. There is a café and a gift shop, so leave time for both."), links: [L(T("官網／購票", "Official site / tickets"), "https://snoopymuseum.tokyo/en/")] },
+      { t: "12:15–13:30", src: "idea", ttl: T("返回市中心", "Back into the city"), nt: T("乘小田急線回新宿，再轉 JR 到東京站。", "Odakyu line back to Shinjuku, then JR to Tokyo Station.") },
+      { t: "13:30–14:30", src: "plan", tag: "retimed", ttl: T("午餐：仙台たんや利久（Gransta 八重洲）", "Lunch: Sendai Tanya Rikyu (Gransta Yaesu)"), nt: T("在東京站內，回程順路。想食鰻魚的話，炭焼うな富士（有樂町）要排隊，下午較易入座。", "Inside Tokyo Station, on the way back. If you'd rather have eel, Sumiyaki Unafuji (Yurakucho) queues at lunch but is easier mid-afternoon."), links: [L("Tanya Rikyu", "https://tabelog.com/en/tokyo/A1302/A130201/13119727/dtlmenu/"), L("Unafuji", "https://tabelog.com/en/tokyo/A1301/A130103/13250032/dtlmenu/")] },
+      { t: "14:45–15:45", src: "plan", tag: "retimed", ttl: T("Tricolore 本店下午茶（免預約）", "Afternoon tea · Tricolore Honten (walk-in)"), nt: T("招牌是朱古力閃電泡芙，加上侍應即場倒的冰咖啡。最近車站：東銀座。", "Get the chocolate éclair and the iced coffee poured at the table. Nearest station: Higashi-Ginza."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13007761/")] },
+      { t: "16:00–17:30", src: "idea", ttl: "GINZA SIX", nt: T("由 Tricolore 步行約 10 分鐘，商場營業至 20:30。", "About 10 minutes on foot from Tricolore; the mall is open until 20:30, so there is time to browse properly."), links: [L("GINZA SIX", "https://ginza6.tokyo/en/"), L(MAP, gm("GINZA SIX"))] },
+      { t: "17:45–18:20", src: "plan", ttl: T("Ginza Sand（免預約）", "Ginza Sand (walk-in)"), nt: T("推介玉子三文治和炸牛排三文治。", "Try the egg sando and the katsu sando."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1301/A130101/13231045/")] },
+      { t: "18:45–20:00", src: "plan", ttl: T("Hills House Sky Room 打卡（免預約）", "Hills House Sky Room · photo stop (walk-in)"), nt: T("麻布台 Hills 森 JP Tower 34 樓。由銀座乘日比谷線到神谷町約 10 分鐘。16:40 已天黑，正好看東京鐵塔夜景。", "Azabudai Hills Mori JP Tower, 34F. The Hibiya Line from Ginza to Kamiyacho takes about 10 min. It's dark by 16:40, so you'll get the Tokyo Tower night view."), links: [L("Tabelog", "https://tabelog.com/en/tokyo/A1307/A130701/13291562/")] },
     ],
     spots: [
       { img: "tricolore", name: T("Tricolore 本店", "Tricolore Honten"), price: "¥1,000–1,999", url: "https://tabelog.com/en/tokyo/A1301/A130101/13007761/" },
@@ -67,7 +69,7 @@ export const DAYS = [
       { img: "azabudai", name: T("麻布台的東京鐵塔夜景", "Tokyo Tower from Azabudai"), price: T("免費", "Free") },
       { img: "ginza", name: T("銀座和光", "Ginza Wako"), price: "" },
     ],
-    budget: { transport: 800, food: 7000, cafe: 4000, tickets: 0, other: 0 }, bn: T("大衣、手袋等列在「手信與購物」。", "Coat and bag are in “Souvenirs & shopping”."), souvenir: 3000, souvenirNote: T("東京站 Gransta 手信", "Gransta snacks at Tokyo Station"),
+    budget: { transport: 2200, food: 7000, cafe: 4000, tickets: 2500, other: 0 }, bn: T("門票為史努比博物館（約 ¥2,500）；交通含町田來回。購物改為史努比博物館禮品店，列在「手信與購物」。", "Tickets = Snoopy Museum (≈ ¥2,500); transport includes the Machida round trip. Shopping is now the Snoopy Museum gift shop, listed in “Souvenirs & shopping”."), souvenir: 5000, souvenirNote: T("史努比博物館禮品店 + 東京站 Gransta 手信", "Snoopy Museum gift shop + Gransta snacks at Tokyo Station"),
   },
   {
     id: "d1229", phase: "p1", d: 29, mon: 12, dow: T("週二", "Tue"),
@@ -220,11 +222,11 @@ export const DAYS = [
   {
     id: "d0107", phase: "p3", d: 7, mon: 1, dow: T("週四", "Thu"),
     cjk: "青山", romaji: "AOYAMA · OMOTESANDO", verse: ["根津庭園", "表參道上"], color: "sage", art: "nezumuseum", artShape: "panel",
-    title: T("青山 · 表參道", "Aoyama · Omotesando"), area: T("根津美術館 → AURALEE", "Nezu Museum → AURALEE"), status: "partial",
+    title: T("青山 · 表參道", "Aoyama · Omotesando"), area: T("根津美術館 → 表參道", "Nezu Museum → Omotesando"), status: "partial",
     items: [
       { t: "10:30", src: "idea", ttl: T("根津美術館 + 庭園", "Nezu Museum + garden"), nt: T("隈研吾設計，庭園內有咖啡店。逢週一休館，請查新年開放日。", "Kengo Kuma building with a garden café. Closed Mondays, so check the New Year schedule."), links: [L(MAP, gm("Nezu Museum"))] },
       { t: "12:30", src: "idea", ttl: T("表參道午餐", "Lunch on Omotesando") },
-      { t: "14:00", src: "plan", ttl: "AURALEE", nt: T("官網顯示這件大衣售罄／預訂中，到店試身並問有沒有貨。", "The coat shows sold out / pre-order online. Try it on in store and ask about stock."), links: [L(T("貨品", "Item"), "https://auralee.jp/item/detail/1_1_A26AC03WM_1/2500"), L(MAP, gm("AURALEE Aoyama"))] },
+      { t: "14:00", src: "idea", ttl: T("表參道散步", "Omotesando stroll"), nt: T("隨意逛逛，不買大衣。", "Just browsing, no coat this time."), links: [L(MAP, gm("Omotesando"))] },
       { t: "15:30", src: "idea", ttl: T("表參道 Hills · GYRE · 貓街減價", "Omotesando Hills · GYRE · Cat Street sales") },
       { t: "17:00", src: "idea", ttl: T("Café Kitsuné 青山 或 岡本太郎紀念館", "Café Kitsuné Aoyama or Taro Okamoto Memorial Museum"), nt: T("岡本太郎紀念館逢週二休館，週四沒問題。", "The Okamoto museum closes Tuesdays, so Thursday is fine."), links: [L("Café Kitsuné", gm("Cafe Kitsune Aoyama"))] },
     ],
@@ -264,14 +266,10 @@ export const DAYS = [
 
 /* Shopping wishlist: price in JPY. kind: "official" = from the store page, "est" = estimate */
 export const WISH = [
-  { id: "public", day: "28/12", name: T("PUBLIC TOKYO 大衣", "PUBLIC TOKYO coat"), price: 35000, kind: "est", pri: true, url: "https://public-tokyo.com/shop/g/g166651002766", note: T("官網要登入才看到價錢", "Store page needs a login to show the price") },
-  { id: "caban", day: "28/12", name: T("CABaN 羊毛華達呢立領大衣（TOMORROWLAND）", "CABaN wool gabardine stand-collar coat (TOMORROWLAND)"), price: 110000, kind: "official", url: "https://store.tomorrowland.co.jp/item/caban/59099409001.html?color_id=49", note: T("深啡色，含稅", "Dark brown, tax incl.") },
   { id: "coach", day: "28/12", name: T("COACH Chelsea 肩袋", "COACH Chelsea shoulder bag"), price: 60000, kind: "est", url: "https://ca.coach.com/en/products/chelsea-shoulder-bag-/CDS58.html?frp=CDS58+B4MPL" },
-  { id: "uniqlo", day: "28/12", name: T("UNIQLO U 軟塗層索繩袋（黑）", "UNIQLO U soft coated drawstring bag (black)"), price: 2990, kind: "est", url: "https://www.uniqlo.com/jp/ja/products/E486461-000/00?colorDisplayCode=09&sizeDisplayCode=999" },
   { id: "vw", day: "27/12", name: "Vivienne Westwood Red Label · Laforet", price: 30000, kind: "est", url: "https://www.viviennewestwood.com/storedetails/?storeID=Tokyo-Red-Label-Concept-Store-Laforet" },
   { id: "dior", day: "29/12", name: T("Dior 卡片銀包", "Dior card wallet"), price: 75000, kind: "est", url: "https://www.dior.com/en_ca/fashion/products/2ESCH135YSE_H03E" },
   { id: "aoyama", day: "31/12", name: T("洋服の青山", "Yōfuku no Aoyama"), price: 10000, kind: "est", url: "https://www.y-aoyama.jp/en/ec/shop/r/r684/?lc=topBnr_category_m" },
-  { id: "auralee", day: "7/1", name: T("AURALEE Super Fine Wool Mosser 立領大衣", "AURALEE Super Fine Wool Mosser soutien collar coat"), price: 180000, kind: "est", url: "https://auralee.jp/item/detail/1_1_A26AC03WM_1/2500", soldOut: true },
 ];
 
 export const REELS = [
@@ -295,6 +293,8 @@ export const REELS = [
   ["泡椒", "https://www.instagram.com/reel/DfMf88BT9YL/?xtok=ZDdoNGlsaHZpZXk="],
   ["Bullies", "https://www.instagram.com/reel/DegLkyTRLcb/?rpxt=ZXVoM3d1eDFoYmxr"],
   ["新片 (DeBlJX)", "https://www.instagram.com/reel/DeBlJX_sxpf/?xtok=YjhjMTlpMTd4MXRm"],
+  ["Neon", "https://www.instagram.com/reel/DfUH3BIoUXz/?xtok=dzllaXZsbTRiZ2d5"],
+  ["Taylor Swift", "https://www.instagram.com/reel/DdzF2YTKTb5/?exln=Ym1zYW43MDh3cWkz"],
 ];
 
 export const DEFAULT_RATES = { HKD: 20.1, CAD: 111.9 }; // JPY per 1 unit
